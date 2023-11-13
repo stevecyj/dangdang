@@ -28,5 +28,5 @@
     "./vite.config.ts"
   ],
   "exclude": ["node_modules", "dist", "build", "scripts", "tests", "cypress"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  // "references": [{ "path": "./tsconfig.node.json" }] // 工具生成的文件，造成tsconfig.json衝突
 }

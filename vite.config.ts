@@ -1,5 +1,7 @@
 import { defineConfig, CommonServerOptions } from "vite";
 import vue from "@vitejs/plugin-vue";
+import fs from "fs";
+import dotenv, { DotenvParseOutput } from "dotenv";
 
 // https://vitejs.dev/config/
 
@@ -9,12 +11,16 @@ export default defineConfig((mode) => {
   console.log("curEnvFileName", curEnvFileName);
 
   let server: CommonServerOptions = {};
+  const envData = fs.readFileSync(curEnvFileName);
+  const envMap: DotenvParseOutput = dotenv.parse(envData);
+  console.log("envMap", envMap);
+
   if (mode.mode === "dev") {
     server = {
-      // host: "192.168.2.6",
-      port: 5005,
+      // host: envMap.VITE_HOST,
+      port: envMap.VITE_PORT,
       proxy: {
-        '/dang': {
+        "/dang": {
           target: "http://192.168.2.6:5003",
         },
       },
