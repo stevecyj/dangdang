@@ -1,5 +1,19 @@
+import goodStorage from "good-storage";
 export class ImgUtil {
   static imgList: Record<string, string> = {};
+
+  static storageImgList() {
+    this.imgList = goodStorage.get("imgList") || {};
+    if(this.isEmpty()){
+      this.loadAllImg();
+      goodStorage.set("imgList", this.imgList);
+    }
+  }
+
+  static isEmpty() {
+    return !Object.getOwnPropertyNames(this.imgList).length;
+  }
+
   static getImg(imgName: string): string {
     return ImgUtil.imgList[imgName];
   }
