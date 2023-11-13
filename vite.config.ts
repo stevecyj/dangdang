@@ -17,7 +17,7 @@ export default defineConfig((mode) => {
 
   if (mode.mode === "dev") {
     server = {
-      // host: envMap.VITE_HOST,
+      host: envMap.VITE_HOST,
       port: envMap.VITE_PORT,
       proxy: {
         "/dang": {
@@ -27,6 +27,10 @@ export default defineConfig((mode) => {
     };
     console.log("dev mode", server);
   } else if (mode.mode === "prod") {
+    server = {
+      host: envMap.VITE_HOST,
+      port: envMap.VITE_PORT,
+    };
     console.log("prod mode");
   }
 
