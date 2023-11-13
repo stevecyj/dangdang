@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import getImg from "./utils/imgUtil";
 </script>
 
 <template>
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
+      <img
+        :src="getImg('braden-collum-9HI8UJMSdZA-unsplash.jpg')"
+        class="logo"
+        alt="Vite logo"
+      />
     </a>
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />

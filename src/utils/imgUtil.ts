@@ -1,5 +1,9 @@
 export class ImgUtil {
   static imgList: Record<string, string> = {};
+  static getImg(imgName: string): string {
+    return ImgUtil.imgList[imgName];
+  }
+
   static loadAllImg() {
     const imgMap = import.meta.glob("../assets/img/**/*.{jpg,png}", {
       eager: true,
@@ -18,3 +22,5 @@ export class ImgUtil {
     console.log("this.imgList", this.imgList);
   }
 }
+
+export default ImgUtil.getImg;
