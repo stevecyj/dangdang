@@ -29,8 +29,7 @@ export class ImgUtil {
 
   static loadAllImg (): void {
     const imgMap = import.meta.glob('../assets/img/**/*.{jpg,png}', {
-      eager: true,
-      import: 'default'
+      eager: true
     })
     console.log('imgMap', imgMap)
     let absolutePath: string = '' // 絕對路徑
