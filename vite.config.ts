@@ -1,9 +1,18 @@
 import { defineConfig, type CommonServerOptions } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import fs from 'fs';
-import { fileURLToPath, URL } from 'node:url';
+import { resolve } from 'path';
 import dotenv, { type DotenvParseOutput } from 'dotenv';
 
+/**
+ * @description: 从当前文件路径解析出项目根路径
+ */
+const pathResolve = (dir: string): string => {
+  return resolve(__dirname, '.', dir);
+};
+const alias: Record<string, string> = {
+  '@': pathResolve('./src')
+};
 // https://vitejs.dev/config/
 
 export default defineConfig((mode) => {
@@ -37,13 +46,7 @@ export default defineConfig((mode) => {
 
   return {
     plugins: [vue()],
-    resolve: {
-      alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url)),
-        img: fileURLToPath(new URL('./src/assets/images', import.meta.url))
-
-      }
-    },
+    resolve: { alias },
     server
   };
 });
