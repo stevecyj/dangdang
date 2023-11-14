@@ -1,6 +1,7 @@
 import { defineConfig, type CommonServerOptions } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import fs from 'fs';
+import { fileURLToPath, URL } from 'node:url';
 import dotenv, { type DotenvParseOutput } from 'dotenv';
 
 // https://vitejs.dev/config/
@@ -36,6 +37,13 @@ export default defineConfig((mode) => {
 
   return {
     plugins: [vue()],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+        img: fileURLToPath(new URL('./src/assets/images', import.meta.url))
+
+      }
+    },
     server
   };
 });

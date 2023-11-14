@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
-import getImg from './utils/imgUtil';
+import getImg from '@/utils/imgUtil';
 </script>
 
 <template>
