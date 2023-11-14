@@ -32,11 +32,13 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['tsconfig.json']
+    project: ['tsconfig.json'],
+    extraFileExtensions: ['.vue']
   },
   plugins: [
     'vue'
   ],
+  ignorePatterns: ['temp.js', '**/vendor/*.js', '**/*.d.ts'],
   rules: {
     'space-before-function-paren': 0,
     'vue/no-multiple-template-root': 0,
@@ -47,6 +49,7 @@ module.exports = {
     quotes: [2, 'single'],
     'prefer-const': 2,
     '@typescript-eslint/no-unused-vars': 0,
-    '@typescript-eslint/no-inferrable-types': 0
+    '@typescript-eslint/no-inferrable-types': 0,
+    '@typescript-eslint/no-extraneous-class': 0
   }
 }

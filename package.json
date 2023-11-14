@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --open --mode dev",
     "build": "vue-tsc && vite build --mode prod",
-    "preview": "vite preview --mode prod"
+    "preview": "vite preview --mode prod",
+    "lint": "eslint --ext .ts --ext js  src/"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
