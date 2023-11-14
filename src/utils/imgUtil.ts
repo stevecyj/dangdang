@@ -36,7 +36,7 @@ export class ImgUtil {
     let imgName: string = ''; // 檔名
     for (const relativePath in imgMap) {
       // console.log(imgMap[relativePath]);
-      absolutePath = imgMap[relativePath] as string;
+      absolutePath = imgMap[relativePath].default;
       imgName = absolutePath.substring(absolutePath.lastIndexOf('/') + 1);
       // console.log("imgName", imgName);
       this.imgList[imgName] = absolutePath;
