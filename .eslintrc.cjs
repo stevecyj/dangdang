@@ -33,7 +33,8 @@ module.exports = {
   plugins: ['vue'],
   ignorePatterns: ['temp.js', '**/vendor/*.js', '**/*.d.ts'],
   rules: {
-    'space-before-function-paren': 0,
+    'space-before-function-paren': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off',
     'vue/no-multiple-template-root': 0,
     '@typescript-eslint/no-empty-function': 0,
     '@typescript-eslint/no-explicit-any': 0,
