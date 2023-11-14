@@ -25,6 +25,7 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
+    ".eslintrc.cjs",
     "./vite.config.ts"
   ],
   "exclude": ["node_modules", "dist", "build", "scripts", "tests", "cypress"],
